@@ -7,6 +7,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/tsparticles@3/tsparticles.bundle.min.js"></script>
+
 </head>
 <body>
   <!-- Header -->
@@ -29,7 +32,7 @@
     <div class="overlay"></div>
     <div class="container hero-grid">
       <div class="profile-wrap">
-        <img src="0S8A9850.JPG" alt="Mohammed Bilal" class="profile-photo"/>
+        <img src="Profile pic/0S8A9850.JPG" alt="Mohammed Bilal" class="profile-photo"/>
       </div>
       <div class="hero-copy">
         <h1>Hi, I'm <span class="highlight">Mohammed Bilal</span></h1>
@@ -44,21 +47,46 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="parallax">
-    <div class="bg"></div><div class="overlay"></div>
-    <div class="container reveal">
-      <h2 class="section-title">About me</h2>
-      <div class="card">
-        <p class="lead">I’m Mohammed Bilal, a passionate tech enthusiast and final-year Computer Science Engineering student, currently serving as the President of my college’s GNU/Linux Users Group (GLUG). I thrive on exploring and building innovative solutions in cybersecurity, web development, cloud engineering, and embedded systems.</p>
-        <ul class="checks">
-          <li>Cybersecurity internship with hands-on experience in Kali Linux, ethical hacking, and network security.</li>
-          <li>Built machine learning projects like <strong>Network Intrusion Detection using ML</strong>.</li>
-          <li>Led technical workshops on dual booting, virtual machines, and multi-OS setups.</li>
-          <li>Explored DevOps & Cloud Computing, aiming to become a Cloud DevOps Engineer at Google.</li>
+  <section id="about" class="parallax" style="position: relative; overflow: hidden;">
+    <!-- Particle container -->
+    <div id="about-particles" style="position: absolute; inset: 0; z-index: 0;"></div>
+  
+    <div class="bg"></div>
+    <div class="overlay"></div>
+  
+    <div class="container reveal" style="position: relative; z-index: 1;">
+
+      <div class="about-card">
+        <h2 class="section-title">About Me</h2>
+        
+        <p class="about-lead">
+          I’m Mohammed Bilal, a passionate tech enthusiast and final-year Computer Science Engineering student, currently serving as the President of my college’s GNU/Linux Users Group (GLUG). I thrive on exploring and building innovative solutions in cybersecurity, web development, cloud engineering, and embedded systems.
+        </p>
+        
+        <blockquote class="about-quote"><span id="about-typewriter"></span></blockquote>
+        
+        <div class="about-stats">
+          <span>👨‍💻 President, GLUG PACE</span>
+          <span>🕸️ Web developer</span>
+          <span>♾️ DevOps Enthusiast</span>
+          <span>☁️ Aspiring cloud engineer</span>
+          <span>🎤 Led 8+ Workshops</span>
+          <span>⚔ Cybersecurity practiser</span>
+          <span>🏆 Organised Tech competitions Including 24 Hours Hackathon</span>
+        </div>
+  
+        <ul class="about-list">
+          <li><span class="icon">🔒</span> Cybersecurity internship in Kali Linux, ethical hacking, and network security</li>
+          <li><span class="icon">🤖</span> Built machine learning projects like Network Intrusion Detection using ML</li>
+          <li><span class="icon">🧑‍🏫</span> Led technical workshops on dual booting, virtual machines, and multi-OS setups</li>
+          <li><span class="icon">🚀</span> Explored DevOps & Cloud Computing—aiming to become a Cloud DevOps Engineer at Google</li>
+          <li><span class="icon">🏅</span> Solved sustainable tourism challenges at the IEEE Hackathon</li>
         </ul>
       </div>
     </div>
   </section>
+  
+  
 
   <!-- SKILLS -->
   <section id="skills" class="parallax">
@@ -66,35 +94,148 @@
     <div class="container">
       <h2 class="section-title">Skills</h2>
       <div class="grid">
-        <div class="skill-card programming">
-          <h3>Programming & Development</h3>
-          <p>Node.js, Express.js, MongoDB, React.js, Python, JavaScript</p>
-          <img class="hover-img" src="https://www.techsors.com/wp-content/uploads/2016/02/App-Development.jpg" alt="Laptop Icon" />
+
+        <div class="skill-card">
+          <h3>HTML</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="75%"></div>
+          </div>
+          <img class="hover-img" src="logos/Html.jpeg" alt="html" />
         </div>
-  
-        <div class="skill-card cybersecurity">
-          <h3>Cybersecurity</h3>
-          <p>Ethical hacking, penetration testing, network security</p>
-          <img class="hover-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKbW0qwU0KVv_asmNT2lBUySJBKp0JZvtzPQ&s" alt="Hacker Mask Icon" />
+        
+
+        <div class="skill-card">
+          <h3>CSS</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="65%"></div>
+          </div>
+          <img class="hover-img" src="logos/CSS.jpeg" alt="CSS" />
         </div>
-  
-        <div class="skill-card machine-learning">
-          <h3>Machine Learning</h3>
-          <p>Classification models, anomaly detection, dataset handling</p>
-          <img class="hover-img" src="ai-bot.svg" alt="AI Bot Icon" />
+        
+
+        <div class="skill-card">
+          <h3>JavaScript</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="50%"></div>
+          </div>
+          <img class="hover-img" src="logos/js.jpeg" alt="Python" />
         </div>
-  
-        <div class="skill-card cloud-devops">
-          <h3>Cloud & DevOps</h3>
-          <p>GCP, AWS, CI/CD, IaC</p>
-          <img class="hover-img" src="infinity-symbol.svg" alt="Infinity Symbol Icon" />
+        
+        
+        <div class="skill-card">
+          <h3>Shell Scripting</h3>
+          <p class="proficiency-level">Beginner</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="35%""></div>
+          </div>
+          <img class="hover-img" src="logos/shellscripting.jpeg" alt="Python" />
         </div>
-  
-        <div class="skill-card tools-platforms">
-          <h3>Tools & Platforms</h3>
-          <p>Linux, Git, Docker, Firebase</p>
-          <img class="hover-img" src="tools.svg" alt="Tools Icon" />
+        
+
+        <div class="skill-card">
+          <h3>AWS</h3>
+          <p class="proficiency-level">Beginner</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="40%"></div>
+          </div>
+          <img class="hover-img" src="logos/aws.png" alt="Python" />
         </div>
+        
+        <div class="skill-card">
+          <h3>Virtual Machines</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="85%"></div>
+          </div>
+          <img class="hover-img" src="logos/virtual.jpeg" alt="Python" />
+        </div>
+        
+
+        <div class="skill-card">
+          <h3>Docker</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="40%"></div>
+          </div>
+          <img class="hover-img" src="logos/docker.png" alt="Python" />
+        </div>
+        
+
+        <div class="skill-card">
+          <h3>Python</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="50%"></div>
+          </div>
+          <img class="hover-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwZFszF8qXH2UfRXVcxIbIUp4c3d6vRjpltQ&s" alt="Python" />
+        </div>
+
+        <div class="skill-card">
+          <h3>Git</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="50%"></div>
+          </div>
+          <img class="hover-img" src="logos/git.jpeg" alt="Python" />
+        </div>
+
+        <div class="skill-card">
+          <h3>Github</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="65%"></div>
+          </div>
+          <img class="hover-img" src="logos/github2.jpeg" alt="Python" />
+        </div>
+        
+        <div class="skill-card">
+          <h3>Microsoft Office Suites</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="65%"></div>
+          </div>
+          <img class="hover-img" src="logos/microsoft.png" alt="Python" />
+        </div>
+
+        <div class="skill-card">
+          <h3>Vs Code</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="75%"></div>
+          </div>
+          <img class="hover-img" src="logos/vs.jpeg" alt="Python" />
+        </div>
+
+        <div class="skill-card">
+          <h3>MongoDB</h3>
+          <p class="proficiency-level">Beginner</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="30%"></div>
+          </div>
+          <img class="hover-img" src="logos/mongodb.jpeg" alt="Python" />
+        </div>
+
+        <div class="skill-card">
+          <h3> Kali Linux</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" style="width: 65%;"></div>
+          </div>
+          <img class="hover-img" src="logos/kali.png" alt="Python" />
+        </div>
+
+        <div class="skill-card">
+          <h3>Canva</h3>
+          <p class="proficiency-level">Intermediate</p>
+          <div class="proficiency-bar">
+            <div class="proficiency-fill" data-width ="75%"></div>
+          </div>
+          <img class="hover-img" src="logos/canva.jpeg" alt="Python" />
+        </div>
+
       </div>
     </div>
   </section>
