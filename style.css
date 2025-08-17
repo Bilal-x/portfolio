@@ -435,6 +435,7 @@ h2.section-title {
 .skill-card h3 {
   margin: 8px 0 8px;
   font-weight: 800;
+  
 }
 
 /* Skill card description color */
@@ -513,71 +514,358 @@ h2.section-title {
   /* width is controlled by JS */
 }
 
+
+
+.skill-dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00e3a1, #d3ff4e);
+  box-shadow: 0 0 8px #d3ff4e, 0 0 2px #fff;
+  border: 2px solid #22243c;
+  flex-shrink: 0;
+}
+
+
 /*========================================
 =            Projects / Experience       =
 ========================================*/
-/* Projects section background with overlay */
-#projects .bg {
-  background:
-    linear-gradient(180deg,#0a0f1e,#0b1126),
-    url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop') center/cover fixed;
-  mix-blend-mode: lighten;
-  opacity: .8;
-}
 
-/* Projects grid */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 18px;
-}
 
-/* Individual project card */
-.project {
-  grid-column: span 6;
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 18px;
+
+#experience {
+  position: relative;
   overflow: hidden;
+  z-index: 1;
+  min-width: 100vh;
+  padding-bottom: 100px;
+}
+
+/* Your animated, wavy, or styled BG */
+/*.exp-bg-waves {
+  position: fixed; /* Key: fixes background to the viewport! 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background:
+    radial-gradient(circle at 15% 30%, #7c5cff33 0vw, transparent 32vw),
+    radial-gradient(circle at 70% 15%, #00e3a144 0vw, transparent 24vw),
+    radial-gradient(ellipse at 15% 65%, #00e3a17a 0vw, transparent 40vw),
+    linear-gradient(120deg, #070a12 80%, #0f1130 100%);
+  mask-image: repeating-linear-gradient(135deg, #000 0px 8vw, transparent 12vw 16vw);
+}
+  
+  /* Keeps the background visually "locked" when scrolling */
+
+
+/* Right-side vertical neon pillar (subtle, blended) */
+.exp-neon-right {
+position: absolute;
+top:6%;
+right:-40px; /*slightly offscreen to blend with edge*/
+width:18px; /* pillar thickness*/
+height: 88%;
+z-index: 0; /*behind content */
+pointer-events: none;
+opacity: 0.55; /*overall subtlety */
+
+/* Core neon gradient */
+background: linear-gradient(
+180deg,
+rgba(0, 210, 255, 0.00) 0%,
+rgba(0, 210, 255, 0.35) 15%,
+rgba(0, 227, 161, 0.45) 50%,
+rgba(0, 210, 255, 0.35) 85%,
+rgba(0, 210, 255, 0.00) 100%
+);
+
+/* Soft inner glow + outer diffusion via pseudo elements */
+box-shadow:
+0 0 22px rgba(0, 210, 255, 0.35),
+0 0 60px rgba(0, 210, 255, 0.20);
+
+/* Subtle glass edge to integrate with dark bg */
+border-radius: 20px;
+backdrop-filter: blur(2px);
+-webkit-backdrop-filter: blur(2px);
+}
+
+/* Slight halo spread to blend into background */
+.exp-neon-right::before {
+content: "";
+position: absolute;
+inset: -80px -110px; / spreads glow horizontally into bg */
+background:radial-gradient(
+60% 100% at 50% 50%,
+rgba(0, 210, 255, 0.10) 0%,
+rgba(0, 227, 161, 0.08) 35%,
+rgba(0, 210, 255, 0.05) 60%,
+transparent 100%
+);
+filter:blur(18px);
+z-index: -1;
+opacity: 0.65;
+pointer-events: none;
+}
+
+/* Very soft moving shimmer for life (optional; disable if you want 100% static) */
+.exp-neon-right::after {
+content: "";
+position: absolute;
+left: 2px;
+top: -6%;
+width: 14px;
+height: 20%;
+background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+border-radius: 14px;
+filter: blur(2px);
+animation: neonShimmer 6s ease-in-out infinite alternate;
+opacity: 0.35;
+}
+
+@keyframes neonShimmer {
+0% { transform: translateY(0); }
+100% { transform: translateY(420%); }
+}
+
+/* Ensure content sits above the background neon */
+#experience > .container,
+#experience .timeline {
+position: relative;
+z-index: 2;
+}
+
+/* Responsive tuning: keep it visible but gentle */
+@media (max-width: 900px) {
+.exp-neon-right {
+right: -28px;
+width: 14px;
+opacity: 0.45;
+height: 86%;
+}
+.exp-neon-right::before {
+inset: -60px -80px;
+opacity: 0.48;
+}
+}
+
+@media (max-width: 600px) {
+.exp-neon-right {
+right: -20px;
+width: 12px;
+height: 82%;
+opacity: 0.40;
+}
+.exp-neon-right::before {
+inset: -40px -60px;
+opacity: 0.42;
+}
+}
+
+@media (max-width: 900px){
+  .exp-bg-waves{
+    opacity: 0.15;
+    background-size:150vw 120vh; /* Make gradients stretch further for tablets */
+  }
+}
+@media (max-width: 600px) {
+  .exp-bg-waves {
+    opacity: 0.2;               /* Keep visible but very light for readability */
+    background-size: 200vw 150vh; /* Gradients extend further; adjust as you prefer */
+    left: -30vw;                  /* Nudge to keep art aligned on mobile */
+  }
+}
+
+
+#experience > .container, #experience .timeline {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .experience-3d-art {
+    display: none; /* Hide on mobile for space */
+  }
+}
+@media (max-width: 900px) {
+  .exp-bg-waves {
+    display: none;
+  }
+}
+
+
+.timeline {
+  position: relative;
+  margin: 40px auto 0 15px;
+  border-left: 3px solid var(--accent);
+  max-width: 600px;
+  z-index: 2;
+  background: transparent;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 0.7em;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 50%;
+  box-shadow: 0 0 18px var(--accent-2), 0 0 3px #fff;
+  border: 2.5px solid #13151c;
+  z-index: 2;
+}
+
+.timeline-content {
+  margin-left: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 22px 26px;
+  box-shadow: 0 4px 18px rgba(124,92,255,.07);
   position: relative;
 }
 
-/* Project thumbnail */
-.project .thumb {
-  height: 180px;
-  background: linear-gradient(135deg, rgba(124,92,255,.3), rgba(0,227,161,.18));
+.timeline-content h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.18em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.timeline-place {
+  display: block;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.timeline-date {
+  display: block;
+  font-size: 0.93em;
+  color: var(--muted);
+  margin-bottom: 7px;
+  font-family: monospace;
+}
+.timeline-content ul {
+  margin: 0;
+  padding-left: 16px;
+  color: #e6ebff;
+  font-size: 0.99em;
+}
+.timeline-content li {
+  margin-bottom: 8px;
 }
 
-/* Project text content */
+
+/*projects style*/
+
+
+.projects-glow, .projects-glow2 {
+    position: absolute;
+    bottom: 0;
+    top: 40%;
+    left: 10%;
+    right:15%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #00e3a144 0%, #7c5cff20 60%, transparent 100%);
+    filter: blur(20px);
+    opacity: 0.55;
+    z-index: 0;
+    pointer-events: none;
+  
+}
+
+/* Glassy project slab effect with animated gradient edge on hover */
+.project {
+  grid-column: span 6;
+  background: rgba(255,255,255,0.08);
+  border-radius: 22px;
+  border: 1.5px solid rgba(255,255,255,0.13);
+  box-shadow: 0 8px 36px rgba(124,92,255,0.085);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: 
+    transform 0.38s cubic-bezier(.42,1.44,.32,.97),
+    box-shadow 0.38s;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scale up card and animate glowing edge on hover */
+.project:hover {
+  transform: scale(1.048);
+  box-shadow: 0 16px 56px rgba(124,92,255,0.19), 0 0 12px #00e3a1;
+  border-image-slice: 1;
+  border-width: 2.5px;
+
+  
+}
+
+/* Content styling */
 .project .content {
-  padding: 18px 18px 22px;
-}
-.project h3 {
-  margin: 6px 0 8px;
+  padding: 28px 26px 24px;
 }
 
-/* Tags inside project cards */
+.project h3 {
+  margin: 0 0 11px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Tags animation and highlight */
 .tag {
   display: inline-block;
-  font-size: 12px;
-  padding: 6px 10px;
+  font-size: 13px;
+  padding: 6px 15px;
   border-radius: 999px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  margin-right: 8px;
+  background: rgba(124,92,255,0.16);
+  border: 1.5px solid rgba(124,92,255,0.34);
+  margin-right: 10px;
+  color: #dce6ff;
+  letter-spacing: 0.05em;
+  transition: 
+    background 0.32s cubic-bezier(.42,1.44,.32,.97),
+    border-color 0.3s,
+    color 0.28s,
+    font-size 0.35s cubic-bezier(.42,1.44,.32,.97);
 }
 
-/* Project actions */
-.project .actions {
-  padding: 0 18px 18px;
+.project:hover .tag {
+  background: linear-gradient(90deg, #7c5cff, #00e3a1);
+  border-color: #7c5cff;
+  color: #fff;
+  font-size: 15px; /* smooth animation kicks in */
 }
 
-/* Responsive project cards for smaller screens */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px; /* increased gap from 24px to 36px */
+  position: relative;
+  z-index: 1;
+}
+
 @media (max-width: 900px) {
   .project {
     grid-column: span 12;
   }
 }
+
 
 /*========================================
 =               Contact                  =
@@ -676,3 +964,89 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/*responsive nav for mobile*/
+
+/* Hide default nav and show hamburger on mobile */
+@media (max-width: 800px) {
+  .nav  .links{
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
+}
+
+/* Hamburger button style */
+.mobile-nav-toggle {
+  width: 38px;
+  height: 38px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 6px;
+  margin-left: 8px;
+  z-index: 101;
+  display: none; /* Hidden by default, shown only on mobile */
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Off-canvas mobile nav */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -240px; /* hidden offscreen */
+  width: 220px;
+  height: 100vh;
+  background: rgba(16,18,32,0.96);
+  box-shadow: 4px 0 32px #0004;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 26px 28px 26px;
+  z-index: 100;
+  transition: left 0.34s cubic-bezier(.52,1.44,.36,.96);
+}
+
+.mobile-nav a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2em;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-radius: 6px;
+  padding: 10px 5px;
+  transition: background 0.18s;
+}
+
+.mobile-nav a:hover {
+  background: rgba(124,92,255,0.12);
+  color: var(--accent);
+}
+
+/* Nav expanded (show) */
+.mobile-nav.open {
+  left: 0; /* Slide in! */
+}
+
+/* Animate hamburger into X when open */
+.mobile-nav-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.mobile-nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-nav-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+

@@ -13,18 +13,33 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="site-header">
-    <nav class="nav">
-      <div class="brand"><span class="dot"></span> Mohammed&nbsp;Bilal</div>
-      <div class="links">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+<header class="site-header">
+  <nav class="nav">
+    <div class="brand"><span class="dot"></span> Mohammed&nbsp;Bilal</div>
+    <div class="links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <!-- Hamburger (mobile only) -->
+    <div class="mobile-nav-toggle" id="mobileNavToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- Off-canvas mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
 
   <!-- HERO -->
   <section id="hero" class="parallax hero">
@@ -92,11 +107,11 @@
   <section id="skills" class="parallax">
     <div class="bg"></div><div class="overlay"></div>
     <div class="container">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Skills & Tools</h2>
       <div class="grid">
 
         <div class="skill-card">
-          <h3>HTML</h3>
+          <h3><span class="skill-dot"></span>HTML</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="75%"></div>
@@ -106,7 +121,7 @@
         
 
         <div class="skill-card">
-          <h3>CSS</h3>
+          <h3><span class="skill-dot"></span>CSS</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="65%"></div>
@@ -116,7 +131,7 @@
         
 
         <div class="skill-card">
-          <h3>JavaScript</h3>
+          <h3><span class="skill-dot"></span>JavaScript</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="50%"></div>
@@ -126,7 +141,7 @@
         
         
         <div class="skill-card">
-          <h3>Shell Scripting</h3>
+          <h3><span class="skill-dot"></span>Shell Scripting</h3>
           <p class="proficiency-level">Beginner</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="35%""></div>
@@ -136,7 +151,7 @@
         
 
         <div class="skill-card">
-          <h3>AWS</h3>
+          <h3><span class="skill-dot"></span>AWS</h3>
           <p class="proficiency-level">Beginner</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="40%"></div>
@@ -145,7 +160,7 @@
         </div>
         
         <div class="skill-card">
-          <h3>Virtual Machines</h3>
+          <h3><span class="skill-dot"></span>Virtual Machines</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="85%"></div>
@@ -155,7 +170,7 @@
         
 
         <div class="skill-card">
-          <h3>Docker</h3>
+          <h3><span class="skill-dot"></span>Docker</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="40%"></div>
@@ -165,7 +180,7 @@
         
 
         <div class="skill-card">
-          <h3>Python</h3>
+          <h3><span class="skill-dot"></span>Python</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="50%"></div>
@@ -174,7 +189,7 @@
         </div>
 
         <div class="skill-card">
-          <h3>Git</h3>
+          <h3><span class="skill-dot"></span>Git</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="50%"></div>
@@ -183,7 +198,7 @@
         </div>
 
         <div class="skill-card">
-          <h3>Github</h3>
+          <h3><span class="skill-dot"></span>Github</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="65%"></div>
@@ -192,7 +207,7 @@
         </div>
         
         <div class="skill-card">
-          <h3>Microsoft Office Suites</h3>
+          <h3><span class="skill-dot"></span>Microsoft Office Suites</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="65%"></div>
@@ -201,7 +216,7 @@
         </div>
 
         <div class="skill-card">
-          <h3>Vs Code</h3>
+          <h3><span class="skill-dot"></span>Vs Code</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="75%"></div>
@@ -210,7 +225,7 @@
         </div>
 
         <div class="skill-card">
-          <h3>MongoDB</h3>
+          <h3><span class="skill-dot"></span>MongoDB</h3>
           <p class="proficiency-level">Beginner</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="30%"></div>
@@ -219,7 +234,7 @@
         </div>
 
         <div class="skill-card">
-          <h3> Kali Linux</h3>
+          <h3><span class="skill-dot"></span> Kali Linux</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" style="width: 65%;"></div>
@@ -228,7 +243,7 @@
         </div>
 
         <div class="skill-card">
-          <h3>Canva</h3>
+          <h3><span class="skill-dot"></span>Canva</h3>
           <p class="proficiency-level">Intermediate</p>
           <div class="proficiency-bar">
             <div class="proficiency-fill" data-width ="75%"></div>
@@ -241,59 +256,131 @@
   </section>
   
 
-  <!-- PROJECTS / EXPERIENCE -->
-  <section id="projects" class="parallax">
-    <div class="bg"></div><div class="overlay"></div>
-    <div class="container">
-      <h2 class="section-title">Experiences & Projects</h2>
-      <div class="cards">
-        <article class="project">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>Network Intrusion Detection using ML</h3>
-            <p class="lead">ML-based anomaly and classification model for network security threat detection.</p>
-            <span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">Security</span>
+  <section id="experience" class="parallax">
+    <div class="exp-neon-right"></div>
+    <div class="container reveal">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+  
+        <!-- 1. GD Edutech -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Software Development & Full Stack Intern</h3>
+            <span class="timeline-place">GD Edutech</span>
+            <span class="timeline-date">Aug 2025 – Present</span>
+            <ul>
+              <li>Learning and contributing to full stack development, Git, and software engineering.</li>
+              <li>Hands-on experience in real-world projects with agile workflows.</li>
+            </ul>
           </div>
-          <div class="actions">
-            <a class="btn" href="#" target="_blank">View Project</a>
+        </div>
+  
+        <!-- 2. The Red Users -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Cyber Security Intern</h3>
+            <span class="timeline-place">The Red Users</span>
+            <span class="timeline-date">Oct 2024 – Nov 2024</span>
+            <ul>
+              <li>Explored ethical hacking, penetration testing, and network security principles.</li>
+              <li>Monitored network packets and assessed vulnerabilities, including SQL injection.</li>
+            </ul>
           </div>
-        </article>
-        <article class="project">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>Personal Finance Management</h3>
-            <p class="lead">Track income and expenses with clean dashboards and exportable reports.</p>
-            <span class="tag">React</span><span class="tag">Charts</span><span class="tag">PWA</span>
+        </div>
+  
+        <!-- 3. AcmeGrade -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Cyber Security Intern</h3>
+            <span class="timeline-place">AcmeGrade</span>
+            <span class="timeline-date">Jan 2024 – Mar 2024</span>
+            <ul>
+              <li>Completed 20+ hours of hands-on ethical hacking and vulnerability assessment.</li>
+              <li>Studied security protocols and cyberattack mitigation methods.</li>
+            </ul>
           </div>
-          <div class="actions">
-            <a class="btn" href="#" target="_blank">View Project</a>
-          </div>
-        </article>
-        <article class="project">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>Web Development Works</h3>
-            <p class="lead">Multiple responsive websites delivered to spec with attention to UX details.</p>
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
-          </div>
-          <div class="actions">
-            <a class="btn" href="#" target="_blank">View Project</a>
-          </div>
-        </article>
-        <article class="project">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>IoT-Based Research Prototypes</h3>
-            <p class="lead">Designed and built IoT solutions for experimentation and learning.</p>
-            <span class="tag">IoT</span><span class="tag">Embedded</span>
-          </div>
-          <div class="actions">
-            <a class="btn" href="#" target="_blank">View Project</a>
-          </div>
-        </article>
+        </div>
+  
+        <!-- Add more timeline items here for future roles if needed -->
+  
       </div>
     </div>
   </section>
+  
+  
+  <!--projects-->
+
+<section id="projects" class="parallax">
+  <div class="projects-glow"></div>
+  <div class="projects-glow2"></div>
+  <div class="container reveal">
+    <h2 class="section-title">Projects</h2>
+    <div class="cards">
+
+      <!-- Project: Password Strength Checker -->
+      <article class="project">
+        <div class="thumb"></div>
+        <div class="content">
+          <h3>🛡️ Password Strength Checker</h3>
+          <p class="lead">Evaluates password strength using Python, helping users create stronger and more secure passwords.</p>
+          <span class="tag">Python</span>
+          <span class="tag">Cybersecurity</span>
+        </div>
+      </article>
+
+      <!-- Project: Vulnerability Scanner -->
+      <article class="project">
+        <div class="thumb"></div>
+        <div class="content">
+          <h3>🔍 Vulnerability Scanner</h3>
+          <p class="lead">Developed a Python scanner to detect security flaws and misconfigurations on systems and networks.</p>
+          <span class="tag">Python</span>
+          <span class="tag">Security</span>
+        </div>
+      </article>
+
+      <!-- Project: Personal Finance Management -->
+      <article class="project">
+        <div class="thumb"></div>
+        <div class="content">
+          <h3>💸 Personal Finance Management</h3>
+          <p class="lead">A MySQL-based solution for tracking income, expenses, and financial transactions.</p>
+          <span class="tag">DBMS</span>
+          <span class="tag">MySQL</span>
+        </div>
+      </article>
+
+      <!-- Project: AWS Resource Usage Tracker -->
+      <article class="project">
+        <div class="thumb"></div>
+        <div class="content">
+          <h3>☁️ AWS Resource Usage Tracker</h3>
+          <p class="lead">Automates daily AWS resource usage summaries via Bash and cron, sent to a reporting dashboard.</p>
+          <span class="tag">AWS</span>
+          <span class="tag">Shell</span>
+        </div>
+      </article>
+
+      <!-- Project: Portfolio Website -->
+      <article class="project">
+        <div class="thumb"></div>
+        <div class="content">
+          <h3>🌐 Portfolio Website</h3>
+          <p class="lead">Designed, coded, and hosted this very site with HTML, CSS, and JavaScript.</p>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  
 
   <!-- CONTACT -->
   <section id="contact" class="parallax">
@@ -328,5 +415,28 @@
     <p>© 2025 Mohammed Bilal. All rights reserved.</p>
   </footer>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+<script>
+  smoothscroll.polyfill();
+
+const navToggle = document.getElementById('mobileNavToggle');
+const mobileNav = document.getElementById('mobileNav');
+
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+
+// Optionally close nav when link clicked (improves UX)
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
+
+
+</script>
+
 </body>
 </html>
