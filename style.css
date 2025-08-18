@@ -31,8 +31,6 @@ html, body {
   scroll-behavior: smooth;
 
   /* Section scrolling snap */
-  scroll-snap-type: y mandatory;
-  overscroll-behavior-y: none;
 }
 
 /*========================================
