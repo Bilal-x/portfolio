@@ -542,6 +542,71 @@ h2.section-title {
   padding-bottom: 100px;
 }
 
+@media (max-width: 900px) {
+  .timeline {
+    max-width: 100%;
+    margin: 20px 10px 0 10px;
+    padding-left: 10px; /* Create space for vertical line */
+    border-left-width: 3px;
+  }
+  .timeline-item {
+    margin-bottom: 24px;
+  }
+
+  /* Timeline dot repositioned */
+  .timeline-dot {
+    left: 0;
+    width: 14px;
+    height: 14px;
+    top: 1em;
+    transform: translateX(-50%);
+    border-width: 2px;
+  }
+
+  /* Make timeline content full width with less padding */
+  .timeline-content {
+    margin-left: 24px; /* smaller margin so no overflow */
+    padding: 16px 18px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(124, 92, 255, 0.07);
+    font-size: 0.9rem; /* slightly smaller font */
+    line-height: 1.3em;
+  }
+
+  /* Reduce heading size */
+  .timeline-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  /* Adjust other text */
+  .timeline-place,
+  .timeline-date,
+  .timeline-content ul {
+    font-size: 0.82rem;
+  }
+
+  .timeline-content ul li {
+    margin-bottom: 6px;
+  }
+}
+
+.timeline {
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: var(--accent);
+  padding-left: 20px; /* push content away from line */
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .timeline-dot {
+    left: 0;
+    transform: translateX(-50%);
+  }
+}
+
+
 /* Your animated, wavy, or styled BG */
 /*.exp-bg-waves {
   position: fixed; /* Key: fixes background to the viewport! 
@@ -859,8 +924,11 @@ opacity: 0.42;
 }
 
 @media (max-width: 900px) {
+  .cards{
+    grid-template-columns: repeat(1,1fr);
+  }
   .project {
-    grid-column: span 12;
+    grid-column: span 1;
   }
 }
 
@@ -968,11 +1036,11 @@ footer {
 
 /* Hide default nav and show hamburger on mobile */
 @media (max-width: 800px) {
-  .nav  .links{
+  .nav .links{
     display: none;
   }
   .mobile-nav-toggle {
-    display: flex;
+    display: flex !important;
   }
 }
 

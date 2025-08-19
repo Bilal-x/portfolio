@@ -241,3 +241,20 @@ window.addEventListener('DOMContentLoaded', () => {
   header.classList.add('show-navbar');
 });
 
+//mobile nav view
+
+const navToggle = document.getElementById('mobileNavToggle');
+const mobileNav = document.getElementById('mobileNav');
+
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+
+// Optionally close nav when link clicked
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
