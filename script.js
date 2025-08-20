@@ -78,14 +78,7 @@ window.addEventListener('resize', parallax);
 window.addEventListener('load', parallax);
 
 // Contact form toast and reset
-const form = document.querySelector('.contact-form');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    toast('Thank you for reaching out! Mohammed will get back to you soon.');
-    form.reset();
-  });
-}
+
 
 // Toast function (accent colors)
 function toast(msg) {

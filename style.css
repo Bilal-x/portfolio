@@ -49,14 +49,16 @@ html, body {
 }
 
 /* Hide header on scroll down */
-.site-header.hide-navbar {
+.site-header 
+.hide-navbar {
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
 }
 
 /* Show header on scroll up */
-.site-header.show-navbar {
+.site-header 
+.show-navbar {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
@@ -961,39 +963,42 @@ opacity: 0.42;
 /*========================================
 =               Contact                  =
 ========================================*/
-/* Contact section background */
-#contact .bg {
-  background:
-    radial-gradient(700px 360px at 75% 15%, rgba(255,61,113,.22), transparent 60%),
-    radial-gradient(700px 360px at 20% 85%, rgba(124,92,255,.25), transparent 60%),
-    linear-gradient(180deg,#090d19,#070a12);
-}
+/* Background already set from your CSS */
 
-/* Contact form grid layout */
+/* Container improvements */
 .contact-wrap {
   display: grid;
-  grid-template-columns: 2fr 1.2fr;
-  gap: 28px;
+  grid-template-columns: 2fr 1fr;  /* Slightly wider form */
+  gap: 36px;
+  align-items: start;
+  padding: 20px 0;
 }
+
 @media (max-width: 900px) {
   .contact-wrap {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
-/* Contact form styling */
+/* Form container */
 form.contact-form {
   background: var(--card);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 18px;
-  padding: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 32px rgba(124, 92, 255, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+form.contact-form:hover, form.contact-form:focus-within {
+  box-shadow: 0 12px 48px rgba(124, 92, 255, 0.35);
 }
 
-/* Contact form rows */
+/* Rows for inputs */
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 20px;
 }
 @media (max-width: 600px) {
   .row {
@@ -1001,34 +1006,98 @@ form.contact-form {
   }
 }
 
-/* Inputs and textareas */
+/* Inputs and Textarea */
 input, textarea {
   width: 100%;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.12);
-  color: #fff;
-  padding: 12px 14px;
-  border-radius: 12px;
-  font: inherit;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  color: #eee;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font: 400 1rem 'Inter', sans-serif;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+input:focus, textarea:focus {
+  outline: none;
+  background: rgba(255,255,255,0.12);
+  border-color: var(--accent);
 }
 
-/* Textarea specific */
+/* Textarea adjustments */
 textarea {
-  min-height: 120px;
+  min-height: 160px;
   resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
 }
 
-/* Social links container */
+/* Button styling with hover effect */
+form .btn {
+  display: block;
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border: none;
+  border-radius: 24px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 92, 255, 0.4);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+form .btn:hover {
+  box-shadow: 0 6px 22px rgba(124, 92, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Socials Container Update */
 .socials {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* Social link anchors */
-.socials a {
-  text-decoration: none;
+/* Social buttons */
+.socials a.btn {
+  .socials a.btn i {
+    font-size: 1.5rem;
+    vertical-align: middle;
+  }
+  
 }
+.socials a.btn:hover {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(124, 92, 255, 0.4);
+}
+
+/* Headings */
+#contact h2.section-title {
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 38px);
+  margin-bottom: 28px;
+  color: var(--accent);
+  text-align: left;
+}
+#contact h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-2);
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 900px) {
+  #contact h3 {
+    text-align: left;
+  }
+}
+
 
 /*========================================
 =               Footer                   =
