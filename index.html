@@ -8,6 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVUtb6KpuYz7Fn25R14ciD7bZJsZLAZ9SuNv/1V7Ro3vV+6hH84Z0dQI/HR2JlS74v6qaK0LMmXQGe58R6mXiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
   <script src="https://unpkg.com/tsparticles@3/tsparticles.bundle.min.js"></script>
 
 </head>
@@ -384,32 +390,39 @@
 
   <!-- CONTACT -->
   <section id="contact" class="parallax">
-    <div class="bg"></div><div class="overlay"></div>
+    <div class="bg"></div>
+    <div class="overlay"></div>
     <div class="container contact-wrap">
-      <div>
-        <h2 class="section-title">Contact me</h2>
-        <form class="contact-form">
-          <div class="row">
-            <input type="text" placeholder="Your Name" name="name" required />
-            <input type="email" placeholder="Enter your Email" name="email" required />
-          </div>
-          <div class="row">
-            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-          </div>
+      <div class="contact-form-container">
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form" action="https://formspree.io/f/mzzvlvgl" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="_replyto" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="hidden" name="_next" value="https://mohdbilal.vercel.app/thanks.html" />
           <button class="btn" type="submit">Send Message</button>
         </form>
       </div>
-      <div>
-        <h3>Find me online</h3>
+      <div class="connect-info">
+        <h3>Let’s Get Connected</h3>
         <div class="socials">
-          <a class="btn" href="https://github.com" target="_blank">GitHub</a>
-          <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a class="btn" href="mailto:mohmdbilal61@gmail.com" target="_blank">Gmail</a>
-          <a class="btn" href="https://instagram.com" target="_blank">Instagram</a>
+          <a class="btn" href="https://github.com/Bilal-x" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/mbillu/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a class="btn" href="mailto:mohmdbilal61@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
+        
       </div>
     </div>
   </section>
+  
+  
+  
 
   <footer>
     <p>© 2025 Mohammed Bilal. All rights reserved.</p>
@@ -434,7 +447,6 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
     mobileNav.classList.remove('open');
   });
 });
-
 
 </script>
 
