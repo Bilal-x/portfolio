@@ -951,3 +951,174 @@ footer {
     padding: 24px;
   }
 }
+
+/*========================================
+=         3D Background Elements         =
+========================================*/
+
+/* perspective container on background */
+.bg {
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+/* 3D Cube styling */
+.cube-3d-wrap {
+  position: absolute;
+  top: 18%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  z-index: 1;
+  pointer-events: none;
+  animation: floatMotion 8s ease-in-out infinite;
+}
+
+.cube-3d {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 25s infinite linear;
+}
+
+.cube-3d .face {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(79, 70, 229, 0.12);
+  background: rgba(79, 70, 229, 0.02);
+  box-shadow: inset 0 0 15px rgba(79, 70, 229, 0.03);
+}
+
+.cube-3d .front  { transform: rotateY(  0deg) translateZ(40px); }
+.cube-3d .back   { transform: rotateY(180deg) translateZ(40px); }
+.cube-3d .right  { transform: rotateY( 90deg) translateZ(40px); }
+.cube-3d .left   { transform: rotateY(-90deg) translateZ(40px); }
+.cube-3d .top    { transform: rotateX( 90deg) translateZ(40px); }
+.cube-3d .bottom { transform: rotateX(-90deg) translateZ(40px); }
+
+@keyframes rotateCube {
+  from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  to { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+}
+
+/* 3D Orbiting Rings styling in Hero */
+.rings-3d-wrap {
+  position: absolute;
+  top: 60%;
+  left: 8%;
+  width: 160px;
+  height: 160px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+  animation: floatMotion2 10s ease-in-out infinite alternate;
+}
+
+.ring-3d {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(13, 148, 136, 0.08);
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.ring-3d.r1 {
+  transform: rotateX(70deg) rotateY(15deg);
+  animation: orbitRing1 20s infinite linear;
+}
+
+.ring-3d.r2 {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-color: rgba(244, 63, 94, 0.08);
+  transform: rotateX(60deg) rotateY(-20deg);
+  animation: orbitRing2 15s infinite linear reverse;
+}
+
+.ring-3d.r3 {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  border-color: rgba(79, 70, 229, 0.08);
+  transform: rotateX(80deg) rotateY(40deg);
+  animation: orbitRing1 12s infinite linear;
+}
+
+@keyframes orbitRing1 {
+  from { transform: rotateX(70deg) rotateY(15deg) rotateZ(0deg); }
+  to { transform: rotateX(70deg) rotateY(15deg) rotateZ(360deg); }
+}
+
+@keyframes orbitRing2 {
+  from { transform: rotateX(60deg) rotateY(-20deg) rotateZ(0deg); }
+  to { transform: rotateX(60deg) rotateY(-20deg) rotateZ(360deg); }
+}
+
+/* 3D Gyroscope styling in About */
+.gyroscope-3d-wrap {
+  position: absolute;
+  bottom: 12%;
+  left: 10%;
+  width: 120px;
+  height: 120px;
+  perspective: 1000px;
+  z-index: 1;
+  pointer-events: none;
+  animation: floatMotion2 9s ease-in-out infinite alternate;
+}
+
+.gyroscope-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateGyro 30s infinite linear;
+}
+
+.gyro-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(13, 148, 136, 0.12);
+  border-radius: 50%;
+  background: rgba(13, 148, 136, 0.01);
+  box-shadow: inset 0 0 10px rgba(13, 148, 136, 0.02);
+}
+
+.gyro-ring.rx { transform: rotateX(90deg); }
+.gyro-ring.ry { transform: rotateY(90deg); }
+.gyro-ring.rz { transform: rotateZ(90deg); }
+
+@keyframes rotateGyro {
+  from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  to { transform: rotateX(360deg) rotateY(-360deg) rotateZ(720deg); }
+}
+
+/* Floating animation details */
+@keyframes floatMotion {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes floatMotion2 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Responsive Hide for 3D elements on smaller screens */
+@media (max-width: 900px) {
+  .cube-3d-wrap,
+  .rings-3d-wrap,
+  .gyroscope-3d-wrap {
+    display: none !important;
+  }
+}
