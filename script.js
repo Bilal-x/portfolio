@@ -93,10 +93,10 @@ function toast(msg) {
     padding: 12px 16px;
     color: #fff;
     border-radius: 12px;
-    box-shadow: ${getComputedStyle(document.documentElement).getPropertyValue('--shadow')};
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
     backdrop-filter: blur(8px);
   `;
-  t.style.background = 'linear-gradient(135deg,var(--accent),var(--accent-2))';
+  t.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
   t.style.border = 'none';
   document.body.appendChild(t);
   setTimeout(() => {
@@ -183,9 +183,9 @@ window.addEventListener('DOMContentLoaded', () => {
     background: { color: "transparent" },
     particles: {
       number: { value: 60 },
-      color: { value: ["#7c5cff", "#00e3a1", "#ff3d71"] },
+      color: { value: ["#4f46e5", "#0d9488", "#f43f5e"] },
       shape: { type: "circle" },
-      opacity: { value: 0.4 },
+      opacity: { value: 0.15 },
       size: { value: { min: 2, max: 4 } },
       move: {
         enable: true,
